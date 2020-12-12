@@ -84,7 +84,8 @@ public enum DriverType implements DriverSetup {
         }
     };
 
-    public final static boolean HEADLESS = Boolean.getBoolean("headless");
+//    public final static boolean HEADLESS = Boolean.getBoolean("headless");
+    public final static boolean HEADLESS = false;
 
     @Override
     public String toString() {
