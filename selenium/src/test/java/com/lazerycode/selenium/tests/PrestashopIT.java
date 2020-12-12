@@ -17,14 +17,15 @@ import java.util.concurrent.TimeUnit;
 
 public class PrestashopIT extends DriverBase {
 
-    public static final String CART_BUTTON = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a";
-    public static final String SEARCH = "//*[@id=\"search_query_top\"]";
-    public static final String FOUND_PRODUCT = "//*[@id=\"center_column\"]/ul/li/div/div[2]/h5/a";
+
+    public static final String CART_BUTTON = "//*[@id=\"_desktop_cart\"]/div/div/a";
+    public static final String SEARCH = "//*[@id=\"search_widget\"]/form/input[2]";
+    public static final String FOUND_PRODUCT = "//*[@id=\"js-product-list\"]/div[1]/article/div/div[1]/h2/a";
     public static final String PRODUCT_QUANTITY_WANTED = "//*[@id=\"quantity_wanted\"]";
     public static final String SIZE_SELECTOR = "//*[@id=\"group_1\"]";
-    public static final String ADD_TO_CART = "//*[@id=\"add_to_cart\"]/button";
-    public static final String CONTINUE_SHOPPING = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span/span";
-    public static final String DELETE_BUTTON = "//a[@title='Delete'][1]";
+    public static final String ADD_TO_CART = "//*[@id=\"add-to-cart-or-refresh\"]/div[2]/div/div[2]/button";
+    public static final String CONTINUE_SHOPPING = "//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/button";
+    public static final String DELETE_BUTTON = "//*[@id=\"main\"]/div/div[1]/div/div[2]/ul/li[1]/div/div[3]/div/div[3]/div/a[1]";
 
     /**
      * Add 10 prouducts (different quantities from two different categories).
@@ -34,14 +35,14 @@ public class PrestashopIT extends DriverBase {
     @Test
     public void checkBasket() throws Exception {
         WebDriver driver = getDriver();
-        driver.get("http://automationpractice.com/index.php");
+        driver.get("http://localhost/prestashop/index.php");
 
         PrestashopPage prestashopPage = new PrestashopPage();
 
         List<ProductToCart> productsToCart = new ArrayList<>();
-        productsToCart.add(new ProductToCart("Blouse", 3, "M"));
-        productsToCart.add(new ProductToCart("Printed Dress", 1, "S"));
-        productsToCart.add(new ProductToCart("Printed Summer Dress", 4, "S"));
+        productsToCart.add(new ProductToCart("Botki", 3, "37"));
+        productsToCart.add(new ProductToCart("Kozaki", 3, "38"));
+        productsToCart.add(new ProductToCart("Botki", 4, "40"));
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
@@ -56,7 +57,7 @@ public class PrestashopIT extends DriverBase {
             search.submit();
 
             // Open selected prouct
-            String productXpath = FOUND_PRODUCT + "[@title='" + product.getName() + "']";
+            String productXpath = FOUND_PRODUCT;
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath(productXpath)));
             driver.findElement(By.xpath(productXpath)).click();
 
@@ -78,6 +79,7 @@ public class PrestashopIT extends DriverBase {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CONTINUE_SHOPPING)));
             WebElement continiueShopping = driver.findElement(By.xpath(CONTINUE_SHOPPING));
             continiueShopping.click();
+	TimeUnit.SECONDS.sleep(3);
         }
 
         // Open Cart
@@ -88,6 +90,7 @@ public class PrestashopIT extends DriverBase {
         WebElement delete = driver.findElement(By.xpath(DELETE_BUTTON));
         delete.click();
 
-        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(30);
     }
 }
+
