@@ -18,13 +18,14 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - ./db:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: Biznes
       MYSQL_DATABASE: prestashop
-      MYSQL_USER: root
-      MYSQL_PASSWORD: Biznes
-    cap_add: 
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: Biznes
+    cap_add:
       - SYS_NICE
 
   adminer:
