@@ -22,8 +22,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: prestashop
-      MYSQL_USER: prestauser
-      MYSQL_PASSWORD: prestapass
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Biznes
     cap_add: 
       - SYS_NICE
 
