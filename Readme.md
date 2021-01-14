@@ -28,3 +28,10 @@ After import is complete you can finally go to store `http://localhost/prestasho
 ```
 docker-compose down 
 ```
+
+### Admin page
+
+```
+email: polibudamichal@gmail.com
+pass: Biznes123
+```
