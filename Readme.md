@@ -11,7 +11,7 @@ docker-compose build
 docker-compose up
 ```
 
-Then go to [localhost:8080](https://localhost:8080).
+Then go to [localhost:8080](http://localhost:8080).
 ```
 server: db
 user: root
@@ -21,7 +21,7 @@ database: prestashop
 
 And import database from file `./dump/postgres.sql`
 
-After import is complete you can finally go to store `http://localhost/prestashop`
+After import is complete you can finally go to store [localhost](http://localhost).
 
 ### Stopping
 
