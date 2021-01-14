@@ -11,7 +11,7 @@ docker-compose build
 docker-compose up
 ```
 
-Then go to [localhost:8080](localhost:8080).
+Then go to [localhost:8080](https://localhost:8080).
 ```
 server: db
 user: root
@@ -34,4 +34,12 @@ docker-compose down
 ```
 email: polibudamichal@gmail.com
 pass: Biznes123
+```
+
+### Enable Dev mode
+
+In `prestashop/config/defines.inc.php` change `_PS_MODE_DEV_` to `true`
+
+```php
+define('_PS_MODE_DEV_', true);
 ```
