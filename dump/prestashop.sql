@@ -12255,7 +12255,7 @@ CREATE TABLE IF NOT EXISTS `ps_linksmenutop_lang` (
 
 INSERT INTO `ps_linksmenutop_lang` (`id_linksmenutop`, `id_lang`, `id_shop`, `label`, `link`) VALUES
 (2, 1, 1, '', ''),
-(2, 2, 1, 'PROMOCJE', 'http://localhost/prestashop/promocje');
+(2, 2, 1, 'PROMOCJE', 'http://localhost/promocje');
 
 -- --------------------------------------------------------
 
@@ -18839,7 +18839,7 @@ CREATE TABLE IF NOT EXISTS `ps_shop_url` (
 --
 
 INSERT INTO `ps_shop_url` (`id_shop_url`, `id_shop`, `domain`, `domain_ssl`, `physical_uri`, `virtual_uri`, `main`, `active`) VALUES
-(1, 1, 'localhost', 'localhost', '/prestashop/', '', 1, 1);
+(1, 1, 'localhost', 'localhost', '/', '', 1, 1);
 
 -- --------------------------------------------------------
 
