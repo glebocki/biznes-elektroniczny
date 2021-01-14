@@ -1,4 +1,8 @@
-#skrypt robiony na statku, nastepuje przekierowanie na strone en. Nalezy zamienic "color:"" na "kolor:"" oraz "ON EQUEST"
+'''
+Skrypt robiony na statku.
+nastepuje przekierowanie na strone en. Nalezy zamienic "color:"" na "kolor:"" oraz "ON EQUEST"
+'''
+
 
 import scrapy
 
