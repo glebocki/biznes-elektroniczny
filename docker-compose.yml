@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d # This is for auto importing from db from dump
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Biznes
+      MYSQL_DATABASE: prestashop
+    cap_add:
+      - SYS_NICE
+
+  adminer:
+    image: adminer
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - 8080:8080

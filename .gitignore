@@ -1,1 +1,7 @@
 prestashop/var/cache/*
+db/
+.idea/
+.DS_Store
+logs/
+prestashop/var/logs/
+
