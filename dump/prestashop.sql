@@ -6414,9 +6414,9 @@ CREATE TABLE IF NOT EXISTS `ps_homeslider_slides_lang` (
 
 INSERT INTO `ps_homeslider_slides_lang` (`id_homeslider_slides`, `id_lang`, `title`, `description`, `legend`, `url`, `image`) VALUES
 (1, 1, 'Sample 1', '<h3>EXCEPTEUR OCCAECAT</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>', 'sample-1', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-EN&utm_content=download', 'sample-1.jpg'),
-(1, 2, 'Nowości', '<p>Nowe produkty w dobrych cenach.</p>', 'Nowości', 'http://localhost/prestashop/13-nowosci', 'c99a9c01680575194fae6e55dd93113eed8b4bc2_kolekcja-jesien-zima-2020-buty-i-torebki-casu-pl-new.jpg'),
+(1, 2, 'Nowości', '<p>Nowe produkty w dobrych cenach.</p>', 'Nowości', 'http://localhost/13-nowosci', 'c99a9c01680575194fae6e55dd93113eed8b4bc2_kolekcja-jesien-zima-2020-buty-i-torebki-casu-pl-new.jpg'),
 (2, 1, 'Sample 2', '<h3>EXCEPTEUR OCCAECAT</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>', 'sample-2', 'http://www.prestashop.com/?utm_source=back-office&utm_medium=v17_homeslider&utm_campaign=back-office-EN&utm_content=download', 'sample-2.jpg'),
-(2, 2, 'Szpilki', '', '', 'http://localhost/prestashop/5-szpilki', '4b39d7fe10c921895b9d5fc7c0fc2e07d1eacb50_simisola_baner.jpg');
+(2, 2, 'Szpilki', '', '', 'http://localhost/5-szpilki', '4b39d7fe10c921895b9d5fc7c0fc2e07d1eacb50_simisola_baner.jpg');
 
 -- --------------------------------------------------------
 
@@ -18068,9 +18068,9 @@ CREATE TABLE IF NOT EXISTS `ps_psreassurance` (
 --
 
 INSERT INTO `ps_psreassurance` (`id_psreassurance`, `icon`, `custom_icon`, `status`, `position`, `id_shop`, `type_link`, `id_cms`, `date_add`, `date_upd`) VALUES
-(1, '/prestashop/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png', '', 1, 1, 1, 0, 0, '2020-12-11 20:34:36', '2020-12-11 20:34:36'),
-(2, '/prestashop/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png', '', 1, 2, 1, 0, 0, '2020-12-11 20:34:57', '2020-12-11 20:34:57'),
-(3, '/prestashop/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png', '', 1, 3, 1, 0, 0, '2020-12-11 20:36:44', '2020-12-11 20:36:44');
+(1, '/modules/blockreassurance/img/ic_verified_user_black_36dp_1x.png', '', 1, 1, 1, 0, 0, '2020-12-11 20:34:36', '2020-12-11 20:34:36'),
+(2, '/modules/blockreassurance/img/ic_local_shipping_black_36dp_1x.png', '', 1, 2, 1, 0, 0, '2020-12-11 20:34:57', '2020-12-11 20:34:57'),
+(3, '/modules/blockreassurance/img/ic_swap_horiz_black_36dp_1x.png', '', 1, 3, 1, 0, 0, '2020-12-11 20:36:44', '2020-12-11 20:36:44');
 
 -- --------------------------------------------------------
 
