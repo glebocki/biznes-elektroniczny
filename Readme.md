@@ -43,3 +43,12 @@ In `prestashop/config/defines.inc.php` change `_PS_MODE_DEV_` to `true`
 ```php
 define('_PS_MODE_DEV_', true);
 ```
+
+### Back office
+
+`http://localhost/admin504ckxrsd/`
+
+```
+polibudamichal@gmail.com
+Biznes123
+```
