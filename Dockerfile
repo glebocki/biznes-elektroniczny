@@ -1,29 +1,28 @@
-FROM php:5.6-apache
+FROM prestashop/prestashop:1.6
 
-# Prestashop dependencies
-RUN apt-get update \
-	&& apt-get install -y libmcrypt-dev \
-	libjpeg62-turbo-dev \
-	libpng-dev \
-	libfreetype6-dev \
-	libxml2-dev \
-	git \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-	&& docker-php-ext-install iconv mcrypt opcache pdo mysql pdo_mysql mbstring soap gd zip
+RUN apt-get update -y &&\
+    apt-get install -y \
+      libfreetype6-dev \
+      libjpeg62-turbo-dev \
+      libwebp-dev \
+      libxpm-dev \
+      libpng-dev
 
-RUN a2enmod rewrite
- # ^append ssl if needed for presta to use ssl directly
- # keep in mind that when using a load balancer like nginx
- # in this project, enforcing https by presta will cause
- # a redirect loop
+RUN docker-php-ext-configure gd\
+    --with-gd \
+    --with-webp-dir \
+    --with-jpeg-dir \
+    --with-png-dir \
+    --with-zlib-dir \
+    --with-xpm-dir \
+    --with-freetype-dir
 
-# RUN git clone \
-#     https://github.com/wazniak96/BiznesElektroniczny.git \
-#     /var/www/html
-ADD prestashop /var/www/html
+RUN docker-php-ext-install mysqli pdo_mysql gd
+RUN docker-php-ext-enable mysqli pdo_mysql gd
 
-# RUN mkdir /var/www/html/var
-# RUN mkdir /var/www/html/var/logs
-RUN chown -R www-data:www-data /var/www/html/
-RUN chmod -R 777 /var/www/html
+RUN a2enmod rewrite ssl
+
+COPY ssl/apache.crt /etc/ssl/certs/ssl-cert-snakeoil.pem
+COPY ssl/apache.key /etc/ssl/private/ssl-cert-snakeoil.key
+
+RUN a2ensite default-ssl
