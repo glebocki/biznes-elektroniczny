@@ -26,8 +26,3 @@ COPY ssl/apache.crt /etc/ssl/certs/ssl-cert-snakeoil.pem
 COPY ssl/apache.key /etc/ssl/private/ssl-cert-snakeoil.key
 
 RUN a2ensite default-ssl
-
-RUN mkdir /var/www/html/var
-RUN mkdir /var/www/html/var/logs
-RUN chown -R www-data:www-data /var/www/html/
-RUN chmod -R 777 /var/www/html
