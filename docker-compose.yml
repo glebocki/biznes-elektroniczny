@@ -2,17 +2,34 @@ version: '3.1'
 
 services:
 
-  prestashop:
-    build: .
+  nginx:
+    build: nginx
+    restart: always
+    depends_on:
+      - prestashop1
+      - prestashop2
+    ports:
+      - 80:80
+      - 443:443
+
+  prestashop1:
+    image: myprestashop
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     depends_on:
       - db
     ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ./prestashop:/var/www/html/
-      - ./logs:/var/log/apache2/
+      - '180:80'
+
+  prestashop2:
+    image: myprestashop
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - '220:80'
 
   db:
     image: mysql:5.7
